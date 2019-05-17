@@ -1,0 +1,25 @@
+[package]
+name = "statick-tools"
+version = "0.1.0"
+authors = ["Thomas Denney <me@thomasdenney.co.uk>"]
+edition = "2018"
+
+[lib]
+name="simlib"
+path="src/lib/lib.rs"
+
+[[bin]]
+name="as"
+path="src/bin/as.rs"
+
+[[bin]]
+name="sim"
+path="src/bin/sim.rs"
+
+[[bin]]
+name="statickc"
+path="src/bin/statickc.rs"
+
+[dependencies]
+regex = "1"
+structopt="0.2"

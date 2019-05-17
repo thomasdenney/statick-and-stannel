@@ -1,0 +1,6 @@
+# Expect: 2
+_start:
+  1 _double call
+  .
+_double:
+  dup + ret

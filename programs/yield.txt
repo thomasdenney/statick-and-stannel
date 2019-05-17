@@ -1,0 +1,2 @@
+# Expect: 1
+1 yield .

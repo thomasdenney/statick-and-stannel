@@ -1,0 +1,4 @@
+# Expect:
+# Expect: 2
+proc1: chan dup proc2 1 start 2 ! drop .
+proc2: ? swap del .

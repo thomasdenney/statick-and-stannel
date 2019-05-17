@@ -1,0 +1,5 @@
+# Expect: 42
+# Expect:
+proc1: chan dup proc2 1 start ? swap drop .
+proc2: 42 nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+nop nop nop nop nop ! drop .

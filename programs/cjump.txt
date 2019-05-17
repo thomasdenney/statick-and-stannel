@@ -1,0 +1,7 @@
+# Expect: 1
+_start:
+  0 1 cmp _success jl
+_fail:
+  0 .
+_success:
+  1 .

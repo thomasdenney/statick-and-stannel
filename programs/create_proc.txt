@@ -1,0 +1,6 @@
+# Expect: 1
+# Expect: 2
+# Expect: 7
+proc1: 1 proc2 0 start .
+proc2: 2 3 proc3 1 start .
+proc3: 4 + .

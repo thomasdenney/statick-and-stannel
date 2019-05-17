@@ -1,0 +1,6 @@
+# Expect: 10
+# Expect: 4
+# Expect: 12
+proc1: 3 proc2 0 start yield 7 + .
+proc2: 4 proc3 0 start .
+proc3: 12 .

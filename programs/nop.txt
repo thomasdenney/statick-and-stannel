@@ -1,0 +1,2 @@
+# Expect: 3 2 1
+1 nop 2 nop 3 nop .

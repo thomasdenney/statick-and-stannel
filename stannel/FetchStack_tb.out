@@ -1,0 +1,286 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-595-ge745304c)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0x7fdd15613a80 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x7fdd15614fb0 .scope module, "FetchStack_tb" "FetchStack_tb" 3 3;
+ .timescale 0 0;
+P_0x7fdd156005c0 .param/l "addrBits" 1 3 4, +C4<00000000000000000000000000001000>;
+P_0x7fdd15600600 .param/l "dataBits" 1 3 5, +C4<00000000000000000000000000010000>;
+v0x7fdd1550c8f0_0 .net "address", 7 0, L_0x7fdd1550d3c0;  1 drivers
+v0x7fdd1550c9c0_0 .var "clk", 0 0;
+o0x10542a548 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x7fdd1550ca90_0 .net "dataIn", 15 0, o0x10542a548;  0 drivers
+v0x7fdd1550cb20_0 .net "dataOut", 15 0, L_0x7fdd1550d120;  1 drivers
+v0x7fdd1550cbf0_0 .net "finished", 0 0, L_0x7fdd1550d500;  1 drivers
+v0x7fdd1550ccc0_0 .var "reset", 0 0;
+L_0x10545b008 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x7fdd1550cd50_0 .net "rw", 0 0, L_0x10545b008;  1 drivers
+v0x7fdd1550cde0_0 .var "stackPointer", 7 0;
+v0x7fdd1550ce90_0 .net "topOfStack1", 15 0, L_0x7fdd1550d190;  1 drivers
+v0x7fdd1550cfc0_0 .net "topOfStack2", 15 0, L_0x7fdd1550d240;  1 drivers
+v0x7fdd1550d050_0 .net "topOfStack3", 15 0, L_0x7fdd1550d2f0;  1 drivers
+S_0x7fdd15614c50 .scope module, "fetch0" "FetchStack" 3 32, 4 4 0, S_0x7fdd15614fb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 16 "dataOut";
+    .port_info 3 /OUTPUT 8 "address";
+    .port_info 4 /OUTPUT 1 "finished";
+    .port_info 5 /INPUT 8 "stackPointer";
+    .port_info 6 /OUTPUT 16 "topOfStack1";
+    .port_info 7 /OUTPUT 16 "topOfStack2";
+    .port_info 8 /OUTPUT 16 "topOfStack3";
+P_0x7fdd15600190 .param/l "FETCH_DONE" 1 4 35, C4<11>;
+P_0x7fdd156001d0 .param/l "FETCH_TOP1" 1 4 32, C4<00>;
+P_0x7fdd15600210 .param/l "FETCH_TOP2" 1 4 33, C4<01>;
+P_0x7fdd15600250 .param/l "FETCH_TOP3" 1 4 34, C4<10>;
+P_0x7fdd15600290 .param/l "addrBits" 0 4 4, +C4<00000000000000000000000000001000>;
+P_0x7fdd156002d0 .param/l "dataBits" 0 4 4, +C4<00000000000000000000000000010000>;
+L_0x7fdd1550d190 .functor BUFZ 16, v0x7fdd1550b4f0_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+L_0x7fdd1550d240 .functor BUFZ 16, v0x7fdd1550b5a0_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+L_0x7fdd1550d2f0 .functor BUFZ 16, v0x7fdd1550b6b0_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+L_0x10545b050 .functor BUFT 1, C4<11>, C4<0>, C4<0>, C4<0>;
+v0x7fdd15601500_0 .net/2u *"_s8", 1 0, L_0x10545b050;  1 drivers
+v0x7fdd1550b0a0_0 .net "address", 7 0, L_0x7fdd1550d3c0;  alias, 1 drivers
+v0x7fdd1550b160_0 .net "clk", 0 0, v0x7fdd1550c9c0_0;  1 drivers
+v0x7fdd1550b210_0 .net "dataOut", 15 0, L_0x7fdd1550d120;  alias, 1 drivers
+v0x7fdd1550b2c0_0 .net "finished", 0 0, L_0x7fdd1550d500;  alias, 1 drivers
+v0x7fdd1550b3a0_0 .var "rMemoryCycle", 0 0;
+v0x7fdd1550b440_0 .var "rState", 1 0;
+v0x7fdd1550b4f0_0 .var "rTop1", 15 0;
+v0x7fdd1550b5a0_0 .var "rTop2", 15 0;
+v0x7fdd1550b6b0_0 .var "rTop3", 15 0;
+v0x7fdd1550b760_0 .net "reset", 0 0, v0x7fdd1550ccc0_0;  1 drivers
+v0x7fdd1550b800_0 .net "stackPointer", 7 0, v0x7fdd1550cde0_0;  1 drivers
+v0x7fdd1550b8b0_0 .net "topOfStack1", 15 0, L_0x7fdd1550d190;  alias, 1 drivers
+v0x7fdd1550b960_0 .net "topOfStack2", 15 0, L_0x7fdd1550d240;  alias, 1 drivers
+v0x7fdd1550ba10_0 .net "topOfStack3", 15 0, L_0x7fdd1550d2f0;  alias, 1 drivers
+v0x7fdd1550bac0_0 .var "wOffset", 7 0;
+v0x7fdd1550bb70_0 .var "wUpdateTop1", 0 0;
+v0x7fdd1550bd00_0 .var "wUpdateTop2", 0 0;
+v0x7fdd1550bd90_0 .var "wUpdateTop3", 0 0;
+E_0x7fdd15605f10 .event edge, v0x7fdd1550b440_0, v0x7fdd1550b3a0_0;
+E_0x7fdd15602ef0 .event posedge, v0x7fdd1550b160_0;
+L_0x7fdd1550d3c0 .arith/sum 8, v0x7fdd1550cde0_0, v0x7fdd1550bac0_0;
+L_0x7fdd1550d500 .cmp/eq 2, v0x7fdd1550b440_0, L_0x10545b050;
+S_0x7fdd1550bef0 .scope module, "ram0" "IceRam" 3 15, 5 6 0, S_0x7fdd15614fb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 8 "address";
+    .port_info 2 /INPUT 1 "readWriteMode";
+    .port_info 3 /INPUT 16 "dataIn";
+    .port_info 4 /OUTPUT 16 "dataOut";
+P_0x7fdd1550c0c0 .param/l "addrBits" 0 5 6, +C4<00000000000000000000000000001000>;
+P_0x7fdd1550c100 .param/l "dataBits" 0 5 6, +C4<00000000000000000000000000010000>;
+P_0x7fdd1550c140 .param/l "ramSize" 1 5 16, +C4<00000000000000000000000100000000>;
+P_0x7fdd1550c180 .param/str "romFile" 0 5 14, "fetch_test_data.hex";
+L_0x7fdd1550d120 .functor BUFZ 16, v0x7fdd1550c650_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+v0x7fdd1550c370_0 .net "address", 7 0, L_0x7fdd1550d3c0;  alias, 1 drivers
+v0x7fdd1550c440_0 .net "clk", 0 0, v0x7fdd1550c9c0_0;  alias, 1 drivers
+v0x7fdd1550c4f0_0 .net "dataIn", 15 0, o0x10542a548;  alias, 0 drivers
+v0x7fdd1550c5a0_0 .net "dataOut", 15 0, L_0x7fdd1550d120;  alias, 1 drivers
+v0x7fdd1550c650_0 .var "rDataOut", 15 0;
+v0x7fdd1550c730 .array "ram", 255 0, 15 0;
+v0x7fdd1550c7d0_0 .net "readWriteMode", 0 0, L_0x10545b008;  alias, 1 drivers
+    .scope S_0x7fdd1550bef0;
+T_0 ;
+    %wait E_0x7fdd15602ef0;
+    %load/vec4 v0x7fdd1550c7d0_0;
+    %cmpi/e 0, 0, 1;
+    %jmp/0xz  T_0.0, 4;
+    %load/vec4 v0x7fdd1550c4f0_0;
+    %load/vec4 v0x7fdd1550c370_0;
+    %pad/u 10;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x7fdd1550c730, 0, 4;
+T_0.0 ;
+    %load/vec4 v0x7fdd1550c370_0;
+    %pad/u 10;
+    %ix/vec4 4;
+    %load/vec4a v0x7fdd1550c730, 4;
+    %assign/vec4 v0x7fdd1550c650_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x7fdd1550bef0;
+T_1 ;
+    %vpi_call/w 5 30 "$readmemh", P_0x7fdd1550c180, v0x7fdd1550c730 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x7fdd15614c50;
+T_2 ;
+    %wait E_0x7fdd15602ef0;
+    %load/vec4 v0x7fdd1550bb70_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %load/vec4 v0x7fdd1550b210_0;
+    %assign/vec4 v0x7fdd1550b4f0_0, 0;
+T_2.0 ;
+    %load/vec4 v0x7fdd1550bd00_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.2, 8;
+    %load/vec4 v0x7fdd1550b210_0;
+    %assign/vec4 v0x7fdd1550b5a0_0, 0;
+T_2.2 ;
+    %load/vec4 v0x7fdd1550bd90_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.4, 8;
+    %load/vec4 v0x7fdd1550b210_0;
+    %assign/vec4 v0x7fdd1550b6b0_0, 0;
+T_2.4 ;
+    %load/vec4 v0x7fdd1550b760_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.6, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7fdd1550b3a0_0, 0;
+    %jmp T_2.7;
+T_2.6 ;
+    %load/vec4 v0x7fdd1550b3a0_0;
+    %pad/u 2;
+    %addi 1, 0, 2;
+    %pad/u 1;
+    %assign/vec4 v0x7fdd1550b3a0_0, 0;
+T_2.7 ;
+    %load/vec4 v0x7fdd1550b760_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.8, 8;
+    %pushi/vec4 0, 0, 2;
+    %assign/vec4 v0x7fdd1550b440_0, 0;
+    %jmp T_2.9;
+T_2.8 ;
+    %load/vec4 v0x7fdd1550b3a0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.10, 8;
+    %load/vec4 v0x7fdd1550b440_0;
+    %addi 1, 0, 2;
+    %assign/vec4 v0x7fdd1550b440_0, 0;
+T_2.10 ;
+T_2.9 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x7fdd15614c50;
+T_3 ;
+    %wait E_0x7fdd15605f10;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdd1550bb70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdd1550bd00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdd1550bd90_0, 0, 1;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x7fdd1550bac0_0, 0, 8;
+    %load/vec4 v0x7fdd1550b440_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 2;
+    %cmp/u;
+    %jmp/1 T_3.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 2;
+    %cmp/u;
+    %jmp/1 T_3.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 2;
+    %cmp/u;
+    %jmp/1 T_3.2, 6;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x7fdd1550bac0_0, 0, 8;
+    %jmp T_3.4;
+T_3.0 ;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x7fdd1550bac0_0, 0, 8;
+    %load/vec4 v0x7fdd1550b3a0_0;
+    %store/vec4 v0x7fdd1550bb70_0, 0, 1;
+    %jmp T_3.4;
+T_3.1 ;
+    %pushi/vec4 1, 0, 8;
+    %store/vec4 v0x7fdd1550bac0_0, 0, 8;
+    %load/vec4 v0x7fdd1550b3a0_0;
+    %store/vec4 v0x7fdd1550bd00_0, 0, 1;
+    %jmp T_3.4;
+T_3.2 ;
+    %pushi/vec4 2, 0, 8;
+    %store/vec4 v0x7fdd1550bac0_0, 0, 8;
+    %load/vec4 v0x7fdd1550b3a0_0;
+    %store/vec4 v0x7fdd1550bd90_0, 0, 1;
+    %jmp T_3.4;
+T_3.4 ;
+    %pop/vec4 1;
+    %jmp T_3;
+    .thread T_3, $push;
+    .scope S_0x7fdd15614fb0;
+T_4 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdd1550c9c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fdd1550ccc0_0, 0, 1;
+    %end;
+    .thread T_4, $init;
+    .scope S_0x7fdd15614fb0;
+T_5 ;
+    %delay 1, 0;
+    %load/vec4 v0x7fdd1550c9c0_0;
+    %inv;
+    %assign/vec4 v0x7fdd1550c9c0_0, 0;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_0x7fdd15614fb0;
+T_6 ;
+    %vpi_call/w 3 47 "$dumpfile", "FetchStack_tb.vcd" {0 0 0};
+    %vpi_call/w 3 48 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fdd15614fb0 {0 0 0};
+    %pushi/vec4 8, 0, 8;
+    %store/vec4 v0x7fdd1550cde0_0, 0, 8;
+    %delay 4, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fdd1550ccc0_0, 0, 1;
+    %delay 6, 0;
+    %load/vec4 v0x7fdd1550ce90_0;
+    %load/vec4 v0x7fdd1550cde0_0;
+    %pad/u 10;
+    %ix/vec4 4;
+    %load/vec4a v0x7fdd1550c730, 4;
+    %cmp/ne;
+    %jmp/0xz  T_6.0, 4;
+    %vpi_call/w 3 53 "$error", "Top of stack 1 not copied as expected." {0 0 0};
+T_6.0 ;
+    %load/vec4 v0x7fdd1550cfc0_0;
+    %load/vec4 v0x7fdd1550cde0_0;
+    %pad/u 33;
+    %addi 1, 0, 33;
+    %ix/vec4 4;
+    %load/vec4a v0x7fdd1550c730, 4;
+    %cmp/ne;
+    %jmp/0xz  T_6.2, 4;
+    %vpi_call/w 3 54 "$error", "Top of stack 2 not copied as expected." {0 0 0};
+T_6.2 ;
+    %load/vec4 v0x7fdd1550d050_0;
+    %load/vec4 v0x7fdd1550cde0_0;
+    %pad/u 33;
+    %addi 2, 0, 33;
+    %ix/vec4 4;
+    %load/vec4a v0x7fdd1550c730, 4;
+    %cmp/ne;
+    %jmp/0xz  T_6.4, 4;
+    %vpi_call/w 3 55 "$error", "Top of stack 3 not copied as expected." {0 0 0};
+T_6.4 ;
+    %delay 4, 0;
+    %vpi_call/w 3 57 "$finish" {0 0 0};
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "-";
+    "FetchStack_tb.v";
+    "FetchStack.v";
+    "IceRam.v";

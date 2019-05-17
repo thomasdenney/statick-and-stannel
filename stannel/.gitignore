@@ -1,0 +1,10 @@
+*.bin
+*.blif
+*.txt
+*.vcd
+*.asc
+*.json
+*Pll.v
+MemoryController*.v
+MemoryControllerExternal*.v
+syn/

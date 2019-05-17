@@ -1,0 +1,13 @@
+# Expect: 43
+# Expect:
+proc1: chan dup proc2 1 start
+altstart
+dup
+enable
+altwait
+done disable
+altend
+.
+# ?
+done: 1 + .
+proc2: 42 ! del .

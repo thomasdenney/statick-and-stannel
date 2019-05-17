@@ -1,0 +1,24 @@
+# Expect: 44 2 0
+# Expect: 0
+# Expect:
+proc1:
+    chan chan
+    1 get proc2 1 start
+    0 get proc3 1 start
+
+    altstart
+        0 get enable
+        1 get enable
+    altwait
+        0 get doneChan1 disable
+        1 get doneChan0 disable
+    altend
+    .
+doneChan0:
+    1 + .
+doneChan1:
+    2 + .
+proc2:
+    .
+proc3:
+    42 ! del .

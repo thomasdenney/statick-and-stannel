@@ -1,0 +1,6 @@
+# Expect: 1
+_start:
+  _func call
+  1 .
+_func:
+  ret

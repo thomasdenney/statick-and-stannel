@@ -1,0 +1,9 @@
+# Expect: 3
+_start:
+  1 1 1
+  _add call
+  .
+_add:
+  + _add2 call ret
+_add2:
+  + ret

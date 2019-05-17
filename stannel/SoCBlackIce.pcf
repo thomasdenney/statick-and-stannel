@@ -1,0 +1,7 @@
+set_io rx 88
+set_io tx 85
+set_io clk 129
+set_io status[3] 61
+set_io status[2] 67
+set_io status[1] 68
+set_io status[0] 70

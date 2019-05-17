@@ -1,0 +1,6 @@
+# Expect: 1
+_start:
+  _end jump
+  .
+_end:
+  1 .

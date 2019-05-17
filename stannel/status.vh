@@ -1,0 +1,4 @@
+`define EXEC_STATUS_OK            2'b00
+`define EXEC_STATUS_HALT          2'b01
+`define EXEC_STATUS_DECODE_ERROR  2'b10
+`define EXEC_STATUS_UNIMPLEMENTED 2'b11
